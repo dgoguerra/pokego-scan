@@ -7,11 +7,6 @@ function printUsage() {
     console.log('usage: pokego-scan latitude,longitude');
 }
 
-var coords = {
-    latitude: 40.4164737,
-    longitude: -3.7042757
-};
-
 var argv = minimist(process.argv.slice(2));
 
 if (argv.help) {
