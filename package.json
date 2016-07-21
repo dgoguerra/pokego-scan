@@ -18,6 +18,9 @@
     "pogo",
     "api"
   ],
+  "bin": {
+    "pokego-scan": "cli.js"
+  },
   "dependencies": {
     "async": "^2.0.0",
     "debug": "^2.2.0",
