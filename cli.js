@@ -31,6 +31,9 @@ if (argv.distance) {
 }
 
 pokegoScan(coords, opts, function(err, pokemon) {
-    if (err) throw err;
+    if (err) {
+        console.error('error: '+err.message);
+        return;
+    }
     console.log(pokemon);
 });
