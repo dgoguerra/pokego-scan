@@ -4,7 +4,7 @@ var minimist = require('minimist'),
     pokegoScan = require('./index.js');
 
 function printUsage() {
-    console.log('usage: pokego-scan latitude,longitude');
+    console.log('usage: pokego-scan -- latitude,longitude');
 }
 
 var argv = minimist(process.argv.slice(2));
@@ -22,7 +22,7 @@ if (argv._.length === 1) {
     coords.latitude = arr[0];
     coords.longitude = arr[1];
 } else {
-    console.log('usage: pokego-scan latitude,longitude');
+    printUsage();
     process.exit(1);
 }
 

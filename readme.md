@@ -61,7 +61,7 @@ pokegoScan(coords, {distance: 100}, function(err, pokemon) {
 
 ```
 $ npm install -g pokego-scan
-$ pokego-scan 40.4164737,-3.7042757 [--distance 100]
+$ pokego-scan [--distance 100] -- 40.4164737,-3.7042757
 ```
 
 ### Debugging
@@ -69,7 +69,7 @@ $ pokego-scan 40.4164737,-3.7042757 [--distance 100]
 Some debugging info can be shown through the [debug](https://www.npmjs.com/package/debug) package. To enable it, use the namespace `pokego-scan`:
 
 ```
-$ DEBUG=pokego-scan pokego-scan 40.4164737,-3.7042757
+$ DEBUG=pokego-scan pokego-scan -- 40.4164737,-3.7042757
   pokego-scan https://pokevision.com/map/scan/40.4164737/-3.7042757 +0ms
   pokego-scan { status: 'success', jobId: '1f6df38141ceaa194703b22830f0e80f' } +293ms
   pokego-scan https://pokevision.com/map/data/40.4164737/-3.7042757/1f6df38141ceaa194703b22830f0e80f +15ms
