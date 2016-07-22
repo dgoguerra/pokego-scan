@@ -7,7 +7,6 @@ var async = require('async'),
 
 function get(url, next) {
     debug(url);
-    var request = url.indexOf('https') === 0 ? require('https') : require('http');
     cloudscraper.get(url, function(error, response, body) {
       if (error) {
         next(err);
