@@ -3,25 +3,26 @@ var async = require('async'),
     geolib = require('geolib'),
     isFunction = require('is-function'),
     pokedex = require('./pokedex.json');
+    cloudscraper = require('cloudscraper');
 
 function get(url, next) {
     debug(url);
     var request = url.indexOf('https') === 0 ? require('https') : require('http');
-    request.get(url, function(res) {
-        var body = '';
-        res.on('data', function(data) { body += data; });
-        res.on('end', function() {
-            if (debug.enabled) {
-                try {
-                    var json = JSON.parse(body);
-                    debug(json);
-                } catch (e) {
-                    debug('(non-json content)');
-                }
+    cloudscraper.get(url, function(error, response, body) {
+      if (error) {
+        next(err);
+      } else {
+        if (debug.enabled) {
+            try {
+                var json = JSON.parse(body);
+                debug(json);
+            } catch (e) {
+                debug('(non-json content)');
             }
-            next(null, body);
-        });
-    }).on('error', function(err) { next(err); });
+        }
+        next(null, body);
+      }
+    });
 }
 
 function secondsToString(sec) {
