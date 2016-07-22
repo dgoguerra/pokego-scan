@@ -1,6 +1,6 @@
 {
   "name": "pokego-scan",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Scan pokemon through PokeVision's API",
   "homepage": "https://github.com/dgoguerra/pokego-scan#readme",
   "author": "Diego Guerra <dgoguerra.or@gmail.com>",
