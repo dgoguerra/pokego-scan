@@ -139,6 +139,11 @@ module.exports = function(coords, opts, next) {
                     return;
                 }
 
+                // filter by specific pokemon, if given as an option
+                if (opts && opts.filter && opts.filter.indexOf(p.name) == -1) {
+                    return;
+                }
+
                 foundPokemon.push(p);
             });
 

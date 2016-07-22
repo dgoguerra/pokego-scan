@@ -55,6 +55,13 @@ pokegoScan(coords, {distance: 100}, function(err, pokemon) {
     if (err) throw err;
     console.log(pokemon);
 });
+
+// filter by specific pokemon
+pokegoScan(coords, {filter: ["Zubat", "Pidgey"]}, function(err, pokemon) {
+    if (err) throw err;
+    console.log(pokemon);
+});
+
 ```
 
 #### From the console
@@ -97,5 +104,3 @@ $ DEBUG=pokego-scan pokego-scan -- 40.4164737,-3.7042757
     despawns_in_str: '09:57' },
   ... ]
 ```
-
-
