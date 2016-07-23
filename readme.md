@@ -68,7 +68,7 @@ pokegoScan(coords, {filter: ["Zubat", "Pidgey"]}, function(err, pokemon) {
 
 ```
 $ npm install -g pokego-scan
-$ pokego-scan [--distance 100] -- 40.4164737,-3.7042757
+$ pokego-scan [--distance 100 --pokemon Pidgey] -- 40.4164737,-3.7042757
 ```
 
 ### Debugging

@@ -15,7 +15,7 @@ if (argv.help) {
 }
 
 var coords = {latitude: null, longitude: null},
-    opts = {distance: null};
+    opts = {distance: null, filter: null};
 
 if (argv._.length === 1) {
     var arr = argv._[0].split(',');
@@ -28,6 +28,14 @@ if (argv._.length === 1) {
 
 if (argv.distance) {
     opts.distance = argv.distance;
+}
+
+if (argv.pokemon) {
+    if (typeof(argv.pokemon) == "object") {
+      opts.filter = argv.pokemon;
+    } else {
+      opts.filter = [argv.pokemon];
+    }
 }
 
 pokegoScan(coords, opts, function(err, pokemon) {
